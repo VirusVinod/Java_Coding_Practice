@@ -1,5 +1,7 @@
 package CodingPactice;
 
+//Question = Sort an array of 0s and 1s
+
 public class sortanarray {
 	public static void main(String[] args) {
         int[] nums = {2, 0, 2, 1, 1, 0};

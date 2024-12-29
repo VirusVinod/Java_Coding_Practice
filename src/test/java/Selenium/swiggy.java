@@ -23,7 +23,7 @@ public class swiggy {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.swiggy.com/");
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 		WebElement signinClick = driver.findElement(By.xpath("//div[@class='_3chg9']"));

@@ -22,20 +22,17 @@ public class SwiggyHomePage {
 		WebElement clickFoodDelivery = driver.findElement(By.xpath("(//div//a//img[@class='sc-bXCLTC gsiCGh'])[1]"));
 		clickFoodDelivery.click();
 
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		String ExpectdatedFood = "restaurant curated for chinese";
-		List<WebElement> elements = driver.findElements(By.xpath("//div//a[@class='sc-gtJxfw djvSuV']"));
-		for (WebElement a : elements) {
-			System.out.println(a.getText());
-			String data = a.getText();
-			if (data.equals(ExpectdatedFood)) {
-				a.click();
-			}
+		String URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png";
+		List<WebElement> items = driver.findElements(By.cssSelector(".sc-kMkxaj.bzknTh"));
+		for (WebElement item : items) {
+			System.out.print(item);
+			WebElement img = item.findElement(By.tagName("img"));
+			String imageUrl = img.getDomProperty("src");
+			System.out.print("Image URL: " + imageUrl);
+			if (imageUrl.equals(URL)) {
+				item.click();			}
 		}
-
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-//		WebElement clickapizz = driver.findElement(By.xpath("(//div//a[@class='sc-gtJxfw djvSuV'])[3]"));
-//		clickapizza.click();
-
 	}
 }

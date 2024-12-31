@@ -21,7 +21,7 @@ public class ReverseStringwithoutusingbuiltinmethods {
 			chars[left] = chars[right];
 			chars[right] = temp;
 
-			left++;
+	 		left++;
 			right--;
 		}
 		return new String(chars);

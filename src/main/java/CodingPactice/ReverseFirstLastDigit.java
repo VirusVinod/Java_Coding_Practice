@@ -16,7 +16,7 @@ public class ReverseFirstLastDigit {
 	            System.out.println("Number with a single digit remains unchanged: " + number);
 	            return;
 	        }
-
+ 
 	        int lastDigit = number % 10;
 	        int firstDigit = number;
 	        int divisor = 1;

@@ -27,9 +27,7 @@ public class SwiggyHomePage {
 		List<WebElement> elements = driver.findElements(By.xpath("//div//a[@class='sc-gtJxfw djvSuV']"));
 		for (WebElement a : elements) {
 			System.out.println(a.getText());
-
 			String data = a.getText();
-
 			if (data.equals(ExpectdatedFood)) {
 				a.click();
 			}

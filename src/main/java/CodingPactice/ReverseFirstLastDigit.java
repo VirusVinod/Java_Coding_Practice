@@ -15,7 +15,7 @@ public class ReverseFirstLastDigit {
 	        if (number < 10) {
 	            System.out.println("Number with a single digit remains unchanged: " + number);
 	            return;
-	        }
+ 	        }
  
 	        int lastDigit = number % 10;
 	        int firstDigit = number;

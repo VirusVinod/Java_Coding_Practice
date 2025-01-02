@@ -18,8 +18,8 @@ public class TwoSumproblem {
 	        int[] result = twoSum(nums, target);
 
 	        System.out.println("[" + result[0] + ", " + result[1] + "]"); // Output: [0, 1]
-	    }
- 
+	    } 
+  
 	    public static int[] twoSum(int[] nums, int target) {
 	        HashMap<Integer, Integer> map = new HashMap<>();
 

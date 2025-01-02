@@ -10,7 +10,7 @@ public class ReverseStringwithoutusingbuiltinmethods {
 		String reversed = reverseString(input);
 		System.out.println("Reversed String: " + reversed);
 	}
-
+ 
 	public static String reverseString(String str) {
 		char[] chars = str.toCharArray();
 		int left = 0;

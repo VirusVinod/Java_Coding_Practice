@@ -19,7 +19,7 @@ public class LargestSmallestNumbers {
 				smallest = numbers[i];
 			}
 
-		}
+		} 
 		System.out.println("Given aaray is: "+ Arrays.toString(numbers));
 		System.out.println("Largest Number: "+ largest);
 		System.out.println("Smallest Number: "+ smallest );

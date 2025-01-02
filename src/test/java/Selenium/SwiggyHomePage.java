@@ -30,7 +30,7 @@ public class SwiggyHomePage {
 			WebElement img = item.findElement(By.tagName("img"));
 			String imageUrl = img.getDomProperty("src");
 			if (imageUrl.equals(expectedURL)) {
-				item.click();			}
+				item.click();			} 
 		}
 	}
 }

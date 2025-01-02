@@ -18,7 +18,7 @@ public class swiggy {
 
 	}
 
-	public void home() {
+	public void home() { 
  
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();

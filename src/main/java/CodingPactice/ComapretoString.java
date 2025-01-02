@@ -9,7 +9,6 @@ public class ComapretoString {
 		
 		System.out.println(s.equals(S2));
 				
-		
 
 	}
 

@@ -18,7 +18,7 @@ public class ReverseFirstLastDigit {
  	        }
  
 	        int lastDigit = number % 10;
-	        int firstDigit = number;
+	        int firstDigit = number; 
 	        int divisor = 1;
 
 	        while (firstDigit >= 10) {

@@ -12,7 +12,7 @@ public class FindDuplicatesElements {
 					System.out.println(array[i]);
 				}
 			}
-		}
+		} 
  
 	}
 

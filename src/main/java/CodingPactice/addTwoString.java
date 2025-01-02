@@ -19,9 +19,9 @@ public class addTwoString {
 	        if (i < a.length()) {
 	            result.append(a.substring(i));
 	        } else if (i < b.length()) {
-	            result.append(b.substring(i));
+	            result.append(b.substring(i)); 
 	        }
  
 	        return result.toString();
-	    }
+	    } 
 }

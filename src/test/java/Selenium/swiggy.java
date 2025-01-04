@@ -47,6 +47,6 @@ public class swiggy {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		veryfyOtp.click();
 
-	}
+	} 
  
 }

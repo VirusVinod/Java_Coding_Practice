@@ -7,7 +7,7 @@ public class SwapWithThirdVariable {
         
 		temp = x;
         x = y;
-        y = temp;
+        y = temp; 
 
         System.out.println("After swap");
         System.out.println("x = " + x);

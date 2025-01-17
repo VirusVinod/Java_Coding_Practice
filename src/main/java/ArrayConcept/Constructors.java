@@ -9,7 +9,7 @@ public class Constructors {
 		  }
 
 		  public static void main(String[] args) {
-		    Main myObj = new Main(5);
+		    Main myObj = new Main(10);
 		    System.out.println(myObj.x);
 		  }
 		}

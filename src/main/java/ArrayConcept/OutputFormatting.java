@@ -13,8 +13,7 @@ public class OutputFormatting {
 			String str = scanner.next();
 			int num = scanner.nextInt();
 
-			// Print the string left-aligned with 15 characters and the integer with 3
-			// digits
+		
 			System.out.printf("%-15s%03d%n", str, num);
 		}
 		System.out.println("================================");

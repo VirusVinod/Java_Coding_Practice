@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
-        String input = "aaaaha";
+        String input = "swiss";
         char result = findFirstNonRepeatingCharacter(input);
 
         if (result != '\0') {

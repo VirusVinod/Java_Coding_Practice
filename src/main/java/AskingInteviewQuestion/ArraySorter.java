@@ -18,7 +18,7 @@ public class ArraySorter {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 5, 2, 9, 1, 5, 6,8 };
+		int[] array = { 5,9, 2, 9, 1, 5, 6,8 };
 
 		Arrays.sort(array);
 		System.out.println("Sorted using Arrays.sort(): " + Arrays.toString(array));

@@ -18,12 +18,12 @@ public class ArraySorter {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 5, 2, 9, 1, 5, 6 };
+		int[] array = { 5, 2, 9, 1, 5, 6,8 };
 
 		Arrays.sort(array);
 		System.out.println("Sorted using Arrays.sort(): " + Arrays.toString(array));
 
-		int[] array2 = { 5, 2, 9, 1, 5, 6 };
+		int[] array2 = { 5, 2, 9, 1, 5, 6,3 };
 		bubbleSort(array2);
 		System.out.println("Sorted using Bubble Sort: " + Arrays.toString(array2));
 	}

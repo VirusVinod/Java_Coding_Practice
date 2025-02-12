@@ -2,7 +2,7 @@ package InterviewQes;
 
 public class RenoveDuplicateSrtring2 {
 	public static void main(String[] args) {
-		String input = "tamato";
+		String input = "automation";
 
 		String result = removeDuplicates(input);
 

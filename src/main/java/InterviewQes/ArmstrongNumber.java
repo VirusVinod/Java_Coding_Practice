@@ -1,4 +1,4 @@
-package CodingPactice;
+package InterviewQes;
 
 public class ArmstrongNumber {
 
@@ -23,7 +23,7 @@ public class ArmstrongNumber {
 	}
 
 	public static void main(String[] args) {
-		isArmstrongNumber(1533);
+		isArmstrongNumber(111);
 	}
 
 }

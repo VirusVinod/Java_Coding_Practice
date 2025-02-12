@@ -1,4 +1,4 @@
-package CodingPactice;
+package InterviewQes;
 
 public class FindDuplicatesElements {
 

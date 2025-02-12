@@ -1,8 +1,8 @@
-package CodingPactice;
+package InterviewQes;
 
 public class RenoveDuplicateSrtring2 {
 	public static void main(String[] args) {
-		String input = "HappyNewYear";
+		String input = "tamato";
 
 		String result = removeDuplicates(input);
 

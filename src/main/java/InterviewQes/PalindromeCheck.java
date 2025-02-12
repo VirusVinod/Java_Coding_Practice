@@ -1,4 +1,4 @@
-package ArrayConcept;
+package InterviewQes;
 
 import java.util.Scanner;
 

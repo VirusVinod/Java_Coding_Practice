@@ -12,7 +12,7 @@ public class DuplicateCharacters {
         int length = charArray.length;
         boolean hasDuplicates = false;
 
-        System.out.println("Duplicate characters in the string:");
+//        System.out.println("Duplicate characters in the string:");
 
         for (int i = 0; i < length; i++) {
             if (charArray[i] == ' ') 

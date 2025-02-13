@@ -10,10 +10,10 @@ public class DuplicateCharacters {
     public static void findDuplicateCharacters(String str) {
         char[] charArray = str.toCharArray();
         int length = charArray.length;
+        boolean hasDuplicates = false;
 
         System.out.println("Duplicate characters in the string:");
 
-        boolean hasDuplicates = false;
         for (int i = 0; i < length; i++) {
             if (charArray[i] == ' ') 
                 continue;

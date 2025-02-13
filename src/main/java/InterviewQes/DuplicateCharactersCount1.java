@@ -1,7 +1,7 @@
 package InterviewQes;
 
 
-public class DuplicateCharacters {
+public class DuplicateCharactersCount1 {
 	public static void main(String[] args) {
         String str = "programming"; 
         findDuplicateCharacters(str);

@@ -31,3 +31,5 @@ public class dropdownList {
 	}
 
 }
+
+// How can I get all elements from drop down list in Selenium WebDriver?

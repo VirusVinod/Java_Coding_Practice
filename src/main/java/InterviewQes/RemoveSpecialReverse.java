@@ -5,7 +5,6 @@ public class RemoveSpecialReverse {
 	public static void main(String[] args) {
 		String input = "se$^%lenum is go&^*od";
 
-		// Step 1: Remove special characters manually
 		String cleanedString = "";
 		for (int i = 0; i < input.length(); i++) {
 			char ch = input.charAt(i);

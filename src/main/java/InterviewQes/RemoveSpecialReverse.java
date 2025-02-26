@@ -13,7 +13,6 @@ public class RemoveSpecialReverse {
 			}
 		}
 
-		// Step 2: Reverse the cleaned string using a for loop
 		String reversedString = "";
 		for (int i = cleanedString.length() - 1; i >= 0; i--) {
 			reversedString += cleanedString.charAt(i);

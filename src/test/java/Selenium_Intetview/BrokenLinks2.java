@@ -19,7 +19,7 @@ public class BrokenLinks2 {
         driver.get("http://www.deadlinkcity.com/");
         driver.manage().window().maximize();
         
-        String baseURL = driver.getCurrentUrl(); // Get base URL for resolving relative links
+        String baseURL = driver.getCurrentUrl();
         List<WebElement> links = driver.findElements(By.tagName("a"));
 
         for (WebElement e : links) {
@@ -44,16 +44,16 @@ public class BrokenLinks2 {
 
                 int responseCode = http.getResponseCode();
                 if (responseCode >= 400) {
-                    System.out.println("❌ Broken link: " + u + " | Response Code: " + responseCode);
+                    System.out.println("Broken link: " + u + " | Response Code: " + responseCode);
                 } else {
-                    System.out.println("✅ Valid link: " + u + " | Response Code: " + responseCode);
+                    System.out.println("Valid link: " + u + " | Response Code: " + responseCode);
                 }
 
                 http.disconnect();
             } catch (URISyntaxException r) {
-                System.out.println("🚨 Invalid URL: " + url);
+                System.out.println("Invalid URL: " + url);
             } catch (IOException p) {
-                System.out.println("🌐 Connection Issue: " + url);
+                System.out.println("Connection Issue: " + url);
             }
         }
         driver.quit();

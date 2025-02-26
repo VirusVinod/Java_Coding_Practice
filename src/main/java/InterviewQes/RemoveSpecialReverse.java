@@ -18,7 +18,6 @@ public class RemoveSpecialReverse {
 			reversedString += cleanedString.charAt(i);
 		}
 
-		// Print results
 		System.out.println("Original String: " + input);
 		System.out.println("Cleaned String: " + cleanedString);
 		System.out.println("Reversed String: " + reversedString);

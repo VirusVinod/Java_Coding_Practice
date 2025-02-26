@@ -8,7 +8,7 @@ public class RemoveSpecialReverse {
 		String cleanedString = "";
 		for (int i = 0; i < input.length(); i++) {
 			char ch = input.charAt(i);
-			if (Character.isLetterOrDigit(ch) || ch == ' ') { // Allow letters, digits, and spaces
+			if (Character.isLetterOrDigit(ch) || ch == ' ') {
 				cleanedString += ch;
 			}
 		}

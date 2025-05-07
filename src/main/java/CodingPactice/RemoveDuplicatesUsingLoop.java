@@ -7,11 +7,11 @@ public class RemoveDuplicatesUsingLoop {
 	public static void main(String[] args) {
 		String[] array = {"apple", "banana", "apple", "orange"};
 
-        System.out.println("Original Array:");
-        for (String item : array) {
-            System.out.print(item + " ");
-        }
-        System.out.println();
+//        System.out.println("Original Array:");
+//        for (String item : array) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println();
 
         // Create a list to store unique elements
         ArrayList<String> uniqueList = new ArrayList<>();

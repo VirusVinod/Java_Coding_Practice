@@ -8,14 +8,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DropDownSelect {
 
 	public static void main(String[] args) {
-		
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://www.askzenixtechnologies.com/contact-us");
 		
@@ -26,7 +29,6 @@ public class DropDownSelect {
 		js.executeScript("arguments[0].scrollIntoView(true);", Drop);
 		wait.until(ExpectedConditions.visibilityOf(Drop));
 		js.executeScript("arguments[0].click();", Drop);
-		Drop.click();
 		
 		
 		List<WebElement> dropdownlist = driver.findElements(By.xpath("//Select[@class='form-select form-control']//option"));
@@ -40,6 +42,12 @@ public class DropDownSelect {
 			}
 			
 		}
+		
+		WebElement Sumb = driver.findElement(By.id("submit-btn"));
+		JavascriptExecutor jsq = (JavascriptExecutor) driver;
+		jsq.executeScript("arguments[0].scrollIntoView(true);", Sumb);
+		wait.until(ExpectedConditions.visibilityOf(Sumb));
+		jsq.executeScript("arguments[0].click();", Sumb);
 		
  
 	}

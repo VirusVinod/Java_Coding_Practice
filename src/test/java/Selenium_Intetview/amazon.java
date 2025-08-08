@@ -33,7 +33,6 @@ public class amazon {
 		List<WebElement> listdata = driver.findElements(By.xpath("//div//h2[@class='a-size-medium a-spacing-none a-color-base a-text-normal']"));
 		
 		for(WebElement alldata:listdata) {
-			wait.until(ExpectedConditions.visibilityOf(alldata));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView(true);", alldata);
 

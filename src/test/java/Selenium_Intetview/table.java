@@ -10,13 +10,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class table {
 
 	public static void main(String[] args) {
-	
-		
+
+
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.techlistic.com/2017/02/automate-demo-web-table-with-selenium.html");
-		
-		
+
+
         List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']//tr[position()>1]"));
         for (int i = 1; i < rows.size(); i++) { // start from 1 to skip header
             WebElement row = rows.get(i);

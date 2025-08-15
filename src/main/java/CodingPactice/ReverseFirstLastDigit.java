@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ReverseFirstLastDigit {
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
 		 Scanner sc = new Scanner(System.in);
 
 	        System.out.print("Enter a number: ");
@@ -16,9 +16,9 @@ public class ReverseFirstLastDigit {
 	            System.out.println("Number with a single digit remains unchanged: " + number);
 	            return;
  	        }
- 
+
 	        int lastDigit = number % 10;
-	        int firstDigit = number; 
+	        int firstDigit = number;
 	        int divisor = 1;
 
 	        while (firstDigit >= 10) {

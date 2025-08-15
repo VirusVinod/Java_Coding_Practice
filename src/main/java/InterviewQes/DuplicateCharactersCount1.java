@@ -3,7 +3,7 @@ package InterviewQes;
 
 public class DuplicateCharactersCount1 {
 	public static void main(String[] args) {
-        String str = "programming"; 
+        String str = "programming";
         findDuplicateCharacters(str);
     }
 
@@ -15,14 +15,15 @@ public class DuplicateCharactersCount1 {
 //        System.out.println("Duplicate characters in the string:");
 
         for (int i = 0; i < length; i++) {
-            if (charArray[i] == ' ') 
-                continue;
+            if (charArray[i] == ' ') {
+				continue;
+			}
 
             int count = 1;
             for (int j = i + 1; j < length; j++) {
                 if (charArray[i] == charArray[j] && charArray[j] != '0') {
                     count++;
-                    charArray[j] = '0'; 
+                    charArray[j] = '0';
                 }
             }
             if (count > 1) {

@@ -12,11 +12,11 @@ public class Mouse_Over {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com/");
-		
-        WebElement elementToHover = driver.findElement(By.xpath("(//span[@class='_1XjE3T'])[3]")); 
-        
+
+        WebElement elementToHover = driver.findElement(By.xpath("(//span[@class='_1XjE3T'])[3]"));
+
         Actions actions = new Actions(driver);
-        actions.moveToElement(elementToHover).perform(); 
+        actions.moveToElement(elementToHover).perform();
 //        driver.quit();
 	}
 

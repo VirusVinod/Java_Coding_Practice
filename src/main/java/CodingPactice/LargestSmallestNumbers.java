@@ -11,7 +11,7 @@ public class LargestSmallestNumbers {
 		int largest = numbers[0];
 		int smallest = numbers[0];
 		int i;
- 
+
 		for (i = 01; i < numbers.length; i++) {
 			if (numbers[i] > largest) {
 				largest = numbers[i];
@@ -19,7 +19,7 @@ public class LargestSmallestNumbers {
 				smallest = numbers[i];
 			}
 
-		} 
+		}
 		System.out.println("Given aaray is: "+ Arrays.toString(numbers));
 		System.out.println("Largest Number: "+ largest);
 		System.out.println("Smallest Number: "+ smallest );

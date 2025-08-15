@@ -11,14 +11,14 @@ public class finddupint1 {
 			boolean isdup = false;
 
 			for (int j = 0; j < i; j++) {
-				
+
 				if(abc[i]== abc[j]) {
 					isdup = true;
 					break;
 				}
 
 			}
-			
+
 			if(!isdup) {
 				System.out.print(abc[i]+",");
 			}

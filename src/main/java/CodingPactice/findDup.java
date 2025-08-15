@@ -9,7 +9,7 @@ public class findDup {
 
 		for (int i = 0; i < n; i++) {
 			boolean isdup = false;
-			
+
 			for(int j = 0; j<i;j++) {
 				if(abc[i]==abc[j]) {
 					isdup = true;

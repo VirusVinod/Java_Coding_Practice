@@ -10,7 +10,7 @@ public class OccurrencesStr {
 		for (int i = 0; i < org.length(); i++) {
 			n[org.charAt(i)]++;
 		}
-		
+
 		for(int j=0; j<256;j++) {
 			if(n[j]>1) {
 				System.out.println((char)j + ":"+n[j]);

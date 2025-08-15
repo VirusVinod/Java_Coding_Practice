@@ -11,7 +11,7 @@ public class RenoveDuplicateSrtring2 {
 	}
 
 	public static String removeDuplicates(String str) {
-		boolean[] seen = new boolean[256]; 
+		boolean[] seen = new boolean[256];
 		StringBuilder result = new StringBuilder(str.length());
 
 		for (int i = 0; i < str.length(); i++) {

@@ -23,4 +23,4 @@ public class ProblemStatement3 {
 
 //For Example :
 //If ‘N’ = 12 and ‘K’ = 2:
-//The binary representation of 12 is ‘1100’, after toggling rightmost 2 bits, it becomes ‘1111’ i.e. 15. Hence, the answer is 15. 
+//The binary representation of 12 is ‘1100’, after toggling rightmost 2 bits, it becomes ‘1111’ i.e. 15. Hence, the answer is 15.

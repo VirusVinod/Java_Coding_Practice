@@ -11,7 +11,6 @@ public class SwapTwovariable {
 		a = a - b;
 		System.out.println("a = " + a + " b = " + b);
 
-	} 
- 
+	}
+
 }
-  

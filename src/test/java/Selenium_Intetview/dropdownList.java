@@ -13,14 +13,14 @@ public class dropdownList {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://seleniumpractise.blogspot.com/2016/08/bootstrap-dropdown-example-for-selenium.html");
-		
-		
+
+
 		WebElement Dropdown = driver.findElement(By.xpath("//button[@id='menu1']"));
 		Dropdown.click();
-		
+
 		List<WebElement> dropdownlist = driver.findElements(By.xpath("//ul[@class='dropdown-menu']//li//a"));
 		 for(WebElement we : dropdownlist) {
-			 String value = we.getText();	
+			 String value = we.getText();
 			 System.out.println(value);
 			 if(value.equals("JavaScript")) {
 				 we.click();

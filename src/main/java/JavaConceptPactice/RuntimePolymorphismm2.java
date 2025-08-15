@@ -8,6 +8,7 @@ class BikeHero {
 }
 
 class hero extends BikeHero {
+	@Override
 	void run() {
 		System.out.println("Hero Bike is running");
 	}

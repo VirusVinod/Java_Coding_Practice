@@ -10,8 +10,7 @@ public class Startprint {
 				System.out.print("*");
 			}
 			System.out.println("");
-		} 
+		}
 	}
 
-} 
- 
+}

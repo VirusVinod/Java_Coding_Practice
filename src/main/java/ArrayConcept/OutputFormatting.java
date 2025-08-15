@@ -13,7 +13,7 @@ public class OutputFormatting {
 			String str = scanner.next();
 			int num = scanner.nextInt();
 
-		
+
 			System.out.printf("%-15s%03d%n", str, num);
 		}
 		System.out.println("================================");
@@ -30,6 +30,6 @@ public class OutputFormatting {
 //
 //================================
 //Sample Output
-//java           100 
-//cpp            065 
-//python         050 
+//java           100
+//cpp            065
+//python         050

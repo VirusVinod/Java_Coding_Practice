@@ -1,6 +1,6 @@
 package CodingPactice;
 
-//Write a program to reverse a string without using built-in methods. 
+//Write a program to reverse a string without using built-in methods.
 
 public class ReverseStringwithoutusingbuiltinmethods {
 
@@ -10,7 +10,7 @@ public class ReverseStringwithoutusingbuiltinmethods {
 		String reversed = reverseString(input);
 		System.out.println("Reversed String: " + reversed);
 	}
- 
+
 	public static String reverseString(String str) {
 		char[] chars = str.toCharArray();
 		int left = 0;

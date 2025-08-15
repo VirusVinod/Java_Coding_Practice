@@ -7,6 +7,7 @@ class Bike {
 }
 
 class Splander extends Bike {
+	@Override
 	void run() {
 		System.out.println("x Running safely with 60km");
 	}

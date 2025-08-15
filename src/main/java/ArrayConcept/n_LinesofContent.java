@@ -3,7 +3,7 @@ package ArrayConcept;
 import java.util.Scanner;
 
 public class n_LinesofContent {
-	
+
 	public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

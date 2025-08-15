@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class HashMap {
 
-//	example -1 
+//	example -1
 //	public static void main(String[] args) {
 //		ArrayList<String> cars = new ArrayList<String>();
 //		cars.add("Volvo");
@@ -17,11 +17,11 @@ public class HashMap {
 //
 //		System.out.println(it.next());
 //	}
-	
+
 //	example 2
-	
+
 	public static void main(String[] args) {
-	    ArrayList<Integer> numbers = new ArrayList<Integer>();
+	    ArrayList<Integer> numbers = new ArrayList<>();
 	    numbers.add(18);
 	    numbers.add(27);
 	    numbers.add(2);

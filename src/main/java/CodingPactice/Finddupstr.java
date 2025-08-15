@@ -13,7 +13,7 @@ public class Finddupstr {
 				res += ch;
 			}
 		}
-		
+
 		System.out.print(res);
 	}
 

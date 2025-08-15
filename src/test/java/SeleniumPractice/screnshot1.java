@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,8 +18,8 @@ public class screnshot1 {
 		driver.get("https://www.saucedemo.com/v1/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-		
+
+
 		File screnshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("scr1.jpg");
 		FileUtils.copyFile(screnshot, des);

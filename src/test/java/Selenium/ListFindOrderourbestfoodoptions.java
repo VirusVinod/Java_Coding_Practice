@@ -18,7 +18,7 @@ public class ListFindOrderourbestfoodoptions {
 		sw.home();
 	}
 
-	public void home() { 
+	public void home() {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.swiggy.com/");
@@ -36,7 +36,7 @@ public class ListFindOrderourbestfoodoptions {
 				item.click();
 				break;
 			}
-		} 
+		}
 
 		// Select a Restaurants and click
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

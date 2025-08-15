@@ -13,17 +13,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class screnshot {
 
 	public static void main(String[] args) throws IOException {
-		
+
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/v1/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
-		
-		
+
+
 		File screnshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("abc.png");
 		FileUtils.copyFile(screnshot, des);
-		
+
 
 	}
 

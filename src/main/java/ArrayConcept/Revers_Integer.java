@@ -10,7 +10,7 @@ public class Revers_Integer {
 					num = num / 10;
 				}
 				System.out.println("Reverse num is::" + rev);
-				
+
 
 	}
 

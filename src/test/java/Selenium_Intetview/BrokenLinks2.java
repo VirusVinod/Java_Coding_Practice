@@ -18,7 +18,7 @@ public class BrokenLinks2 {
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.deadlinkcity.com/");
         driver.manage().window().maximize();
-        
+
         String baseURL = driver.getCurrentUrl();
         List<WebElement> links = driver.findElements(By.tagName("a"));
 
@@ -35,7 +35,7 @@ public class BrokenLinks2 {
                     url = new URI(baseURL).resolve(url).toString();
                 }
 
-                URL u = new URI(url).toURL(); 
+                URL u = new URI(url).toURL();
                 HttpURLConnection http = (HttpURLConnection) u.openConnection();
                 http.setRequestMethod("HEAD");
                 http.setConnectTimeout(5000);

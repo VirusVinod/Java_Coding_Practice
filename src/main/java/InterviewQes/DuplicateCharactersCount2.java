@@ -22,7 +22,7 @@ public class DuplicateCharactersCount2 {
 				System.out.println(entry.getKey() + ": " + entry.getValue());
 			}
 		}
-		scanner.close(); 
+		scanner.close();
 	}
 
 }

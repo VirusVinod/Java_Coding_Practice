@@ -8,7 +8,7 @@ public class Strrev {
 		String rev = " ";
 
 		for (int i = 0; i < org.length(); i++) {
-			
+
 			rev = org.charAt(i)+" "+rev;
 
 		}

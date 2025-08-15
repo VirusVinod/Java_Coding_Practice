@@ -6,9 +6,9 @@ public class ComapretoString {
 
 		String s = "Test 1";
 		String S2 = "Test 1";
-		
+
 		System.out.println(s.equals(S2));
-				
+
 	}
 
 }

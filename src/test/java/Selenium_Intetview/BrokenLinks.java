@@ -27,7 +27,7 @@ public class BrokenLinks {
 				continue;
 			}
 			try {
-				URL u = new URI(url).toURL(); 	
+				URL u = new URI(url).toURL();
 				HttpURLConnection http = (HttpURLConnection) u.openConnection();
 				if (http.getResponseCode() > 400) {
 					System.out.println("Broken link" + u);

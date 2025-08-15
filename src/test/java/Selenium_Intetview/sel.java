@@ -10,7 +10,7 @@ public class sel {
 		driver.get("http://www.deadlinkcity.com/");
 		driver.manage().window().maximize();
 
-		
+
 
 	}
 }

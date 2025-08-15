@@ -18,7 +18,7 @@ public class finddupint {
 				}
 
 			}
-			
+
 			if(!isdup) {
 				System.out.print(abc[i]+ ",");
 			}

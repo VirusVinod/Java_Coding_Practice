@@ -13,14 +13,14 @@ public class Keyboard_Actions {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com/");
-		
-        WebElement inputField = driver.findElement(By.xpath("//div[@class='_2SmNnR']//input")); 
+
+        WebElement inputField = driver.findElement(By.xpath("//div[@class='_2SmNnR']//input"));
         inputField.click();
-        
+
         Actions actions = new Actions(driver);
         actions.sendKeys("Iphone").perform();
-        actions.sendKeys(Keys.ENTER).perform(); 
-        
+        actions.sendKeys(Keys.ENTER).perform();
+
 
 	}
 

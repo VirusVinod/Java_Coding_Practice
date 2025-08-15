@@ -17,16 +17,16 @@ public class RemoveDuplicatesUsingLoop {
         ArrayList<String> uniqueList = new ArrayList<>();
 
         // Use nested loops to remove duplicates
-        for (int i = 0; i < array.length; i++) {
+        for (String element : array) {
             boolean isDuplicate = false;
-            for (int j = 0; j < uniqueList.size(); j++) {
-                if (array[i].equals(uniqueList.get(j))) {
+            for (String element2 : uniqueList) {
+                if (element.equals(element2)) {
                     isDuplicate = true;
                     break;
                 }
             }
             if (!isDuplicate) {
-                uniqueList.add(array[i]);
+                uniqueList.add(element);
             }
         }
 
@@ -36,7 +36,7 @@ public class RemoveDuplicatesUsingLoop {
         for (String item : uniqueArray) {
             System.out.print(item + " ");
         }
-		
+
 
 	}
 

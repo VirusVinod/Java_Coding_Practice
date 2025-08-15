@@ -15,11 +15,11 @@ public class shopifytest {
 		driver.get("https://automation108.myshopify.com/");
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		
-		
+
+
 		WebElement EnterStorePassword =driver.findElement(By.id("password"));
 		EnterStorePassword.sendKeys("visitor");
-		
+
 		WebElement enter =driver.findElement(By.xpath("//button[@type='submit']"));
 		enter.click();
 	}

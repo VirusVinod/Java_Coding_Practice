@@ -7,7 +7,7 @@ public class addTwoString {
 	        String result = interleaveStrings(a, b);
 	        System.out.println(result); // Output: "ADBECFGH"
 	    }
-  
+
 	    public static String interleaveStrings(String a, String b) {
 	        StringBuilder result = new StringBuilder();
 	        int i = 0;
@@ -19,9 +19,9 @@ public class addTwoString {
 	        if (i < a.length()) {
 	            result.append(a.substring(i));
 	        } else if (i < b.length()) {
-	            result.append(b.substring(i)); 
+	            result.append(b.substring(i));
 	        }
- 
-	        return result.toString(); 
-	    } 
+
+	        return result.toString();
+	    }
 }

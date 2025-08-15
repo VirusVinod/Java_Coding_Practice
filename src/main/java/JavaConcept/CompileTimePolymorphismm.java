@@ -13,7 +13,7 @@ public class CompileTimePolymorphismm {
 	}
 
 	public static void main(String[] args) {
-		
+
 		CompileTimePolymorphismm ctp = new CompileTimePolymorphismm();
 		System.out.println("Two no add : " + ctp.add(4, 100));
 		System.out.println("Three no add : " + ctp.add(4, 100, 3445));

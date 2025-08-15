@@ -25,13 +25,13 @@ public class amazon {
 
 		WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
 		search.sendKeys("Iphone");
-		
+
 		WebElement clickbtn = driver.findElement(By.id("nav-search-submit-button"));
 		clickbtn.click();
-		
+
 		String expectedaddCart = "iPhone 16 256 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery Life. Works with AirPods; Black";
 		List<WebElement> listdata = driver.findElements(By.xpath("//div//h2[@class='a-size-medium a-spacing-none a-color-base a-text-normal']"));
-		
+
 		for(WebElement alldata:listdata) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView(true);", alldata);
@@ -47,7 +47,7 @@ public class amazon {
 				break;
 			}
 		}
-		
+
 
 	}
 

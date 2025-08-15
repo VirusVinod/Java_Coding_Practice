@@ -8,12 +8,14 @@ public class Polymorphism {
 	}
 
 	class Pig extends Animal {
+		@Override
 		public void animalSound() {
 			System.out.println("The pig says: wee wee wee");
 		}
 	}
 
 	class Dog extends Animal {
+		@Override
 		public void animalSound() {
 			System.out.println("The dog says: bow bow wow");
 		}
@@ -21,7 +23,7 @@ public class Polymorphism {
 
 	public static void main(String[] args) {
 		Polymorphism polymorphism = new Polymorphism();
-		
+
 		Animal myAnimal = polymorphism.new Animal();
 		Animal myPig = polymorphism.new Pig();
 		Animal myDog = polymorphism.new Dog();

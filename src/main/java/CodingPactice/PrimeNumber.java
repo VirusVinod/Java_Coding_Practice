@@ -3,8 +3,8 @@ package CodingPactice;
 public class PrimeNumber {
 
 	public static void main(String[] args) {
-		int num = 8;
-		boolean isPrime = false;
+		int num = 29;
+		boolean isPrime = true;
 
 		if (num <= 1) {
 			isPrime = false;

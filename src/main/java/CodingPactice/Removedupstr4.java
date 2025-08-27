@@ -13,7 +13,7 @@ public class Removedupstr4 {
 				res += ch;
 			}
 		}
-		
+
 		System.out.print(res);
 
 	}

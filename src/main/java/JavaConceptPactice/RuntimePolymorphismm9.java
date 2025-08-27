@@ -7,6 +7,7 @@ class abcCompany {
 }
 
 class xyzCompany extends abcCompany {
+	@Override
 	void interview() {
 		System.out.println("xyz comapny is requiured java with selenium");
 

@@ -13,13 +13,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class screnshot3 {
 
 	public static void main(String[] args) throws IOException {
-		
+
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-		
+
+
 		File screnshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("ama.png");
 		FileUtils.copyFile(screnshot, des);

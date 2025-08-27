@@ -26,7 +26,7 @@ public class screnshot5 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		driver.quit();
 
 	}

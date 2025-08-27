@@ -16,10 +16,11 @@ public class PrimeNumber {
 				}
 			}
 		}
-		if (isPrime)
+		if (isPrime) {
 			System.out.println(num + " is a prime number");
-		else
+		} else {
 			System.out.println(num + " is not a prime number");
+		}
 
 	}
 

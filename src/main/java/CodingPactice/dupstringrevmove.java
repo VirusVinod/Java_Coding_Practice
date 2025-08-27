@@ -12,7 +12,7 @@ public class dupstringrevmove {
 				res += ch;
 			}
 		}
-		
+
 		System.out.print(res);
 
 	}

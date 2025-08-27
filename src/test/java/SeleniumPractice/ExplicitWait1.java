@@ -16,10 +16,10 @@ public class ExplicitWait1 {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		
-		
+
+
 		WebElement clickoncarrier = driver.findElement(By.xpath("//a[text()='Careers']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true)", clickoncarrier);

@@ -7,6 +7,7 @@ class one {
 }
 
 class two extends one {
+	@Override
 	void run() {
 		System.out.println("class to is callling");
 	}

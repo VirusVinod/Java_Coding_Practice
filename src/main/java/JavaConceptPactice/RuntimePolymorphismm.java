@@ -7,6 +7,7 @@ class pix {
 }
 
 class plxeles extends pix {
+	@Override
 	void pixclass() {
 		System.out.println("class is provided for BCA and MCA");
 	}
@@ -15,8 +16,8 @@ class plxeles extends pix {
 public class RuntimePolymorphismm {
 
 	public static void main(String[] args) {
-		
-		
+
+
 		pix pp = new plxeles();
 		pp.pixclass();
 

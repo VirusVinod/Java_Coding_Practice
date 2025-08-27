@@ -7,6 +7,7 @@ class phone {
 }
 
 class iphonemob extends phone {
+	@Override
 	void iphone() {
 		System.out.println("iphone is new launch 17");
 	}

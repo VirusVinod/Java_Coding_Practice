@@ -9,6 +9,7 @@ class QA {
 
 
 class QAEngineer extends QA{
+	@Override
 	void testing() {
 		System.out.println("after build qa perform regration testing");
 	}
@@ -17,10 +18,10 @@ class QAEngineer extends QA{
 public class RuntimePolymorphismm1 {
 
 	public static void main(String[] args) {
-		
+
 		QA qa = new QAEngineer();
 		qa.testing();
-		
+
 
 	}
 

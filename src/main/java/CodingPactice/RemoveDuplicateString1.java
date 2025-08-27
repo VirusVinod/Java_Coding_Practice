@@ -8,7 +8,7 @@ public class RemoveDuplicateString1 {
 
 		for (int i = 0; i < org.length(); i++) {
 			char ch = org.charAt(i);
-			
+
 			if(ch != ' ' && rev.indexOf(ch) == -1  ) {
 				rev += ch;
 			}

@@ -31,13 +31,13 @@ public class logintest {
 
 		WebElement logclick = driver.findElement(By.id("login-button"));
 		logclick.click();
-		
+
 		String ActulRes= "Products";
 		WebElement expres = driver.findElement(By.xpath("//div[@class='product_label']"));
 		String resul = expres.getText();
 		System.out.println(ActulRes +" -----"+ resul);
 		Assert.assertEquals(ActulRes, resul);
-		
+
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("screnn.png");
 		FileUtils.copyFile(screenshot, des);

@@ -13,14 +13,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ExplicitWait {
 
 	public static void main(String[] args) {
-		
+
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		
-		
+
+
 		WebElement Careersclick = driver.findElement(By.xpath("//a[text()='Careers']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true)", Careersclick);

@@ -18,10 +18,11 @@ public class PrimeNumber3 {
 
 		}
 
-		if (isPrime)
+		if (isPrime) {
 			System.out.println(num + " : is a prime number");
-		else
+		} else {
 			System.out.println(num + " : is a not prime number");
+		}
 
 	}
 

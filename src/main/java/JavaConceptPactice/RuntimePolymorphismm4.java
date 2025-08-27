@@ -9,6 +9,7 @@ class SDET{
 }
 
 class QAMaager extends SDET{
+	@Override
 	void check() {
 		System.out.println("QA Manager Assign the the task");
 	}

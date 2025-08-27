@@ -7,6 +7,7 @@ class NokiaMobile {
 }
 
 class Iphone extends NokiaMobile {
+	@Override
 	void display() {
 		System.out.println("Iphone dispaly is very good");
 	}

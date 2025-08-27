@@ -7,6 +7,7 @@ class lap {
 }
 
 class lappy extends lap {
+	@Override
 	void laptop() {
 		System.out.println("This is a i7 and 11th gen laptop");
 	}
@@ -15,7 +16,7 @@ class lappy extends lap {
 public class RuntimePolymorphismm5 {
 
 	public static void main(String[] args) {
-		
+
 		lap ll = new lappy();
 		ll.laptop();
 

@@ -17,8 +17,8 @@ public class screnshot2 {
 		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-		
+
+
 		File screnshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("abbbb.jpg");
 		FileUtils.copyFile(screnshot, des);

@@ -1,6 +1,6 @@
 package CodingPactice;
 
-public class reversestr3 {
+public class Reversestr3 {
 
 	public static void main(String[] args) {
 

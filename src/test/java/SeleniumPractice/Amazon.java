@@ -57,7 +57,7 @@ public class Amazon {
 			}
 		}
 		
-		driver.quit();
+//		driver.quit();
 
 	}
 

@@ -19,6 +19,7 @@ import junit.framework.Assert;
 public class LoginPage1 {
 
 	public static void main(String[] args) {
+//		Step : 1
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/v1/");
 		driver.manage().window().maximize();
@@ -32,11 +33,15 @@ public class LoginPage1 {
 
 		WebElement btnClick = driver.findElement(By.id("login-button"));
 		btnClick.click();
+		
+//		Step : 2
 
 		String expectedRes = "Products";
 		WebElement getPageName = driver.findElement(By.xpath("//div[@class='product_label']"));
 		String actualRes = getPageName.getText();
 		Assert.assertEquals(expectedRes, actualRes);
+
+//		Step : 3
 
 		File screnshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File des = new File("image.jpg");
@@ -46,6 +51,8 @@ public class LoginPage1 {
 			e.printStackTrace();
 		}
 
+//		Step : 4
+		
 		String expectedProduct = "Sauce Labs Backpack";
 		List<WebElement> getProductName = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
 

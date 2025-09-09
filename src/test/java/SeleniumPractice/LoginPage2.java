@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class LoginPage2 {
 
 	public static void main(String[] args) {
@@ -25,6 +27,14 @@ public class LoginPage2 {
 
 		WebElement lognbtn = driver.findElement(By.id("login-button"));
 		lognbtn.click();
+		
+		// Step: 2
+		
+		String validatedNavigateUrl = "Products";
+		WebElement pageNameGet = driver.findElement(By.xpath("//div[@class='product_label']"));
+		String acutualRes = pageNameGet.getText();
+		Assert.assertEquals(validatedNavigateUrl, acutualRes);
+				
 
 	}
 

@@ -1,9 +1,14 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Driver;
 import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +22,8 @@ public class LoginPage3 {
 		ll.setup();
 		ll.login();
 		ll.validationCheck();
-		
+		ll.screnshot();
+
 	}
 
 // Step 0: Declare driver at class level
@@ -55,9 +61,20 @@ public class LoginPage3 {
 		WebElement getActualRes = driver.findElement(By.xpath("//div[@class='product_label']"));
 		String actualResult = getActualRes.getText();
 		Assert.assertEquals(expectedResult, actualResult);
-		
-		driver.quit();
 
 	}
-	
+
+//	Step : 4
+
+	public void screnshot() {
+		File screnshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File des = new File("imageeeeeee.jpg");
+		try {
+			FileUtils.copyFile(screnshot, des);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
+
 }

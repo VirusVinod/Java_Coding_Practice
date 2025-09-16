@@ -1,5 +1,6 @@
 package SeleniumPractice;
 
+import java.sql.Driver;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -7,12 +8,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class LoginPage3 {
 
 	public static void main(String[] args) {
 		LoginPage3 ll = new LoginPage3();
 		ll.setup();
 		ll.login();
+		ll.validationCheck();
+		
 	}
 
 // Step 0: Declare driver at class level
@@ -42,4 +47,17 @@ public class LoginPage3 {
 
 	}
 
+//	Step : 3
+
+	public void validationCheck() {
+
+		String expectedResult = "Products";
+		WebElement getActualRes = driver.findElement(By.xpath("//div[@class='product_label']"));
+		String actualResult = getActualRes.getText();
+		Assert.assertEquals(expectedResult, actualResult);
+		
+		driver.quit();
+
+	}
+	
 }

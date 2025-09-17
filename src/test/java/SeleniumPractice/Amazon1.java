@@ -17,7 +17,7 @@ public class Amazon1 {
 	public static void main(String[] args) {
 		Amazon1 AA = new Amazon1();
 		AA.searchItem();
-		
+		AA.addToClick();
 
 	}
 
@@ -36,6 +36,24 @@ public class Amazon1 {
 		searchClick.click();
 	}
 
+	public void addToClick() {
+		
+		String expectedResult = "Apple iPhone 11 (128GB) - Black";
 
+		List<WebElement> getAllItem = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//h2"));
+
+		for (WebElement product : getAllItem) {
+			String actualResult = product.getText();
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true)", product);
+			
+			if (actualResult.equals(expectedResult)) {
+				js.executeScript("arguments[0].click()", product);
+				break;
+			}
+
+		}
+	}
 
 }

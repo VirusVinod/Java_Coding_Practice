@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,6 +19,7 @@ public class Amazon1 {
 		Amazon1 AA = new Amazon1();
 		AA.searchItem();
 		AA.addToClick();
+		AA.addToCartThrowWindowhandle();
 
 	}
 
@@ -37,23 +39,43 @@ public class Amazon1 {
 	}
 
 	public void addToClick() {
-		
+
 		String expectedResult = "Apple iPhone 11 (128GB) - Black";
 
 		List<WebElement> getAllItem = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//h2"));
 
 		for (WebElement product : getAllItem) {
 			String actualResult = product.getText();
-			
+
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView(true)", product);
-			
+
 			if (actualResult.equals(expectedResult)) {
 				js.executeScript("arguments[0].click()", product);
 				break;
 			}
 
 		}
+	}
+
+	public void addToCartThrowWindowhandle() {
+
+		String ParentId = driver.getWindowHandle();
+
+		Set<String> aWindowhandle = driver.getWindowHandles();
+
+		for (String s : aWindowhandle) {
+			if (!ParentId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement ele = driver.findElement(By.xpath("//input[@name='submit.add-to-cart']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", ele);
+				js.executeScript("arguments[0].click()", ele);
+				break;
+			}
+		}
+
 	}
 
 }

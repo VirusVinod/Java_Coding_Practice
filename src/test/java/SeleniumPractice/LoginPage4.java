@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +19,7 @@ public class LoginPage4 {
 		ll.setup();
 		ll.login();
 		ll.validateNavigateUrl();
+		ll.clickaItem();
 	}
 
 	// Setup: 1
@@ -49,7 +52,28 @@ public class LoginPage4 {
 		String actualResult = getvalue.getText();
 		Assert.assertEquals(Expectedres, actualResult);
 		System.out.println(Expectedres + " : " + actualResult);
-		driver.quit();
+
+	}
+	// Setup: 3
+	
+	public void clickaItem() {
+
+		String tragetProduct = "Sauce Labs Backpack";
+		List<WebElement> getProductName = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
+		for (WebElement ele : getProductName) {
+			String allProductNameGet = ele.getText();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true)", getProductName);
+			if (allProductNameGet.equals(tragetProduct)) {
+				WebElement clickAddtoCart = driver
+						.findElement(By.xpath("//button[@class='btn_primary btn_inventory']"));
+				js.executeScript("arguments[0].click()", clickAddtoCart);
+				break;
+			}
+
+			driver.quit();
+
+		}
 
 	}
 

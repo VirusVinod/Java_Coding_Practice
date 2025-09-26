@@ -63,7 +63,7 @@ public class LoginPage4 {
 		for (WebElement ele : getProductName) {
 			String allProductNameGet = ele.getText();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true)", getProductName);
+			js.executeScript("arguments[0].scrollIntoView(true)", ele);
 			if (allProductNameGet.equals(tragetProduct)) {
 				WebElement clickAddtoCart = driver
 						.findElement(By.xpath("//button[@class='btn_primary btn_inventory']"));
@@ -71,7 +71,7 @@ public class LoginPage4 {
 				break;
 			}
 
-			driver.quit();
+//			driver.quit();
 
 		}
 

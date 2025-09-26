@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class LoginPage4 {
 	WebDriver driver;
 
@@ -14,6 +16,7 @@ public class LoginPage4 {
 		LoginPage4 ll = new LoginPage4();
 		ll.setup();
 		ll.login();
+		ll.validateNavigateUrl();
 	}
 
 	// Setup: 1
@@ -25,7 +28,7 @@ public class LoginPage4 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
-	// Steup: 2
+	// Setup: 2
 
 	public void login() {
 		WebElement userName = driver.findElement(By.id("user-name"));
@@ -36,8 +39,18 @@ public class LoginPage4 {
 
 		WebElement lgnBtn = driver.findElement(By.id("login-button"));
 		lgnBtn.click();
-		driver.quit();
-	}
 
+	}
+	// Setup: 2
+
+	public void validateNavigateUrl() {
+		String Expectedres = "Products";
+		WebElement getvalue = driver.findElement(By.xpath("//div[@class='product_label']"));
+		String actualResult = getvalue.getText();
+		Assert.assertEquals(Expectedres, actualResult);
+		System.out.println(Expectedres + " : " + actualResult);
+		driver.quit();
+
+	}
 
 }

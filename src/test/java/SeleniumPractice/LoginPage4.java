@@ -1,10 +1,15 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +25,7 @@ public class LoginPage4 {
 		ll.login();
 		ll.validateNavigateUrl();
 		ll.clickaItem();
+		ll.screnshot();
 	}
 
 	// Setup: 1
@@ -44,7 +50,7 @@ public class LoginPage4 {
 		lgnBtn.click();
 
 	}
-	// Setup: 2
+	// Setup: 3
 
 	public void validateNavigateUrl() {
 		String Expectedres = "Products";
@@ -54,8 +60,8 @@ public class LoginPage4 {
 		System.out.println(Expectedres + " : " + actualResult);
 
 	}
-	// Setup: 3
-	
+	// Setup: 4
+
 	public void clickaItem() {
 
 		String tragetProduct = "Sauce Labs Backpack";
@@ -71,10 +77,23 @@ public class LoginPage4 {
 				break;
 			}
 
-//			driver.quit();
+			driver.quit();
 
 		}
 
+	}
+
+	// Setup: 5
+	public void screnshot() {
+
+		File screnshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File des = new File("jsgfjsdfhgjsd.jpg");
+		try {
+			FileUtils.copyFile(screnshot, des);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		driver.quit();
 	}
 
 }

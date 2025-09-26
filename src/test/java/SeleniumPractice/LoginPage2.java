@@ -69,7 +69,7 @@ public class LoginPage2 {
 
 		}
 		
-//		driver.quit();
+		driver.quit();
 
 	}
 

@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 import java.util.Scanner;
 

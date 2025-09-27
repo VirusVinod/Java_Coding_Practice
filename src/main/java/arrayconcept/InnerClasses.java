@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 public class InnerClasses {
 	int x = 10;

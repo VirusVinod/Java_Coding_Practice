@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 public class MethodOverloading {
 	static int plusMethodInt(int x, int y) {

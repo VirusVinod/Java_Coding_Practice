@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 public class Polymorphism {
 	class Animal {

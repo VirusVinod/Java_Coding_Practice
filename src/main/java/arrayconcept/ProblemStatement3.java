@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 public class ProblemStatement3 {
 	public static int toggleBits(int N, int K) {

@@ -1,4 +1,4 @@
-package ArrayConcept;
+package arrayconcept;
 
 public class fizzBuzz {
 	   public static void fizz(int n) {

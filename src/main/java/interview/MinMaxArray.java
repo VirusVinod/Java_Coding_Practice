@@ -1,4 +1,4 @@
-package AskingInteviewQuestion;
+package interview;
 
 public class MinMaxArray {
 	public static void main(String[] args) {

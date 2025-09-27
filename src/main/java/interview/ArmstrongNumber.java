@@ -1,4 +1,4 @@
-package InterviewQes;
+package interview;
 
 public class ArmstrongNumber {
 

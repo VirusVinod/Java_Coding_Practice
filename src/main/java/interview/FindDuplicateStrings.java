@@ -1,4 +1,4 @@
-package InterviewQes;
+package interview;
 
 public class FindDuplicateStrings {
 	public static void main(String[] args) {

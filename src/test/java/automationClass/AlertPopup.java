@@ -19,24 +19,26 @@ public class AlertPopup {
 
 //		WebElement alertBox = driver.findElement(By.id("alertBox"));
 //		alertBox.click();
-		
+
 //		Switch to Popup : 
 //			accept()
 //			dismiss()
 //			sendKeys()
-		
-		
+//			getText()
+
 //		Alert a = driver.switchTo().alert();
 //		a.accept();
-		
+
 		WebElement confirmBox1 = driver.findElement(By.id("promptBox"));
 		confirmBox1.click();
-		
+
 		Alert a1 = driver.switchTo().alert();
+		String text = a1.getText();
+		System.out.println(text);
+
 		a1.sendKeys("Automation Testing By Vinod Singh");
 		a1.accept();
 
-		
 	}
 
 }

@@ -53,7 +53,7 @@ public class LoginPage1 {
 
 //		Step : 4
 		
-		String expectedProduct = "Sauce Labs Backpack";
+		String expectedProduct = "Sauce Labs Onesie";
 		List<WebElement> getProductName = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
 
 		for (WebElement ele : getProductName) {

@@ -35,8 +35,9 @@ public class Amazon {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true)", product);
 				js.executeScript("arguments[0].click()", product);
-				
-				System.out.println("Clicked Add to Cart for: " + tragetProductName);
+
+				System.out.println("Traget Product Name : " + tragetProductName);
+				System.out.println("Click Product Name :  " + getProductName);
 				break;
 
 			}

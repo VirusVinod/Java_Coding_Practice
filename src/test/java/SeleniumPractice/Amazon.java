@@ -24,39 +24,41 @@ public class Amazon {
 		WebElement afterSearchClickBtn = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		afterSearchClickBtn.click();
 
-		String tragetProductName = "Apple iPhone 15 (128 GB) - Black";
-		List<WebElement> getAllProductList = driver
-				.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
-		
+		String tragetProductName = "iPhone Air 256 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Space Black";
+		List<WebElement> getAllProductList = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+
 		for (WebElement product : getAllProductList) {
-			String getProductName = product.getText();
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true)", product);
+			String getProductName = product.getText().trim();
+
 			if (getProductName.equalsIgnoreCase(tragetProductName)) {
-			
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", product);
 				js.executeScript("arguments[0].click()", product);
+				
+				System.out.println("Clicked Add to Cart for: " + tragetProductName);
 				break;
 
 			}
 		}
-		
+
 		String pranetId = driver.getWindowHandle();
 		System.out.println(pranetId);
-		
+
 		Set<String> allWindows = driver.getWindowHandles();
-		for(String s : allWindows) {
-			if(!pranetId.equals(s)) {
+		for (String s : allWindows) {
+			if (!pranetId.equals(s)) {
 				driver.switchTo().window(s);
-                WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
-                js.executeScript("arguments[0].click()", addToCart);
-                System.out.println("Clicked Add to Cart button successfully!");
+				WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
+				js.executeScript("arguments[0].click()", addToCart);
+				System.out.println("Clicked Add to Cart button successfully!");
 				break;
 
 			}
 		}
-		
+
 //		driver.quit();
 
 	}

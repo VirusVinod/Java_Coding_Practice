@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ActionsConcept {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.browserstack.com/guide/mouse-hover-in-selenium");
@@ -28,23 +28,22 @@ public class ActionsConcept {
 		WebElement InnerApptesting = driver.findElement(By.xpath("//button[@id='products-dd-tab-3']"));
 		a.moveToElement(InnerApptesting).perform();
 
-		
-		
 		String expectedRes = "App Live";
 		List<WebElement> allProd = driver.findElements(By.xpath("//div[@id='products-dd-tabpanel-3-inner-1']//a"));
 
 		for (WebElement ele : allProd) {
-		    String actual = ele.getText().trim();
+			String actual = ele.getText().trim();
 
-		    if (actual.contains(expectedRes)) {  // <- use contains to handle extra text
-		        JavascriptExecutor js = (JavascriptExecutor) driver;
-		        js.executeScript("arguments[0].scrollIntoView(true);", ele);
-		        js.executeScript("arguments[0].click();", ele);
+			if (actual.contains(expectedRes)) { // <- use contains to handle extra text
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true);", ele);
+				js.executeScript("arguments[0].click();", ele);
 
-		        System.out.println("Target Product Name: " + expectedRes);
-		        System.out.println("Clicked Product Text: " + actual);
-		        break;
-		    }
+				System.out.println("Target Product Name: " + expectedRes);
+				System.out.println("Clicked Product Text: " + actual);
+				break;
+			}
+
 		}
 
 	}

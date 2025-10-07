@@ -26,7 +26,7 @@ public class ExplicitWait8 {
 		js.executeScript("arguments[0].click()", eleclick);
 		
 		driver.quit();
-
+ 
 	}
 
 }

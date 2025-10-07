@@ -24,7 +24,7 @@ public class ExplicitWait4 {
 		js.executeScript("arguments[0].scrollIntoView(true)", ele);
 		wait.until(ExpectedConditions.visibilityOf(ele));
 		js.executeScript("arguments[0].click()", ele);
-
+ 
 	}
 
 }

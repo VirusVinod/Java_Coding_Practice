@@ -56,7 +56,7 @@ public class Amazon {
 				js.executeScript("arguments[0].click()", addToCart);
 				System.out.println("Clicked Add to Cart button successfully!");
 				break;
-
+ 
 			}
 		}
 

@@ -21,7 +21,9 @@ public class demoqa {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", maleRadio);
 
-	
+		WebElement maleRadatePickerInputdio = driver.findElement(By.id("dateOfBirthInput"));
+		js.executeScript("arguments[0].click()", maleRadatePickerInputdio);
+
 	}
 
 }

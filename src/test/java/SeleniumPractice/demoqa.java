@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,7 +48,15 @@ public class demoqa {
 				break;
 			}
 		}
-
+		
+//		Select state and city
+		  WebElement stateDropdown = driver.findElement(By.cssSelector("div#state div.css-yk16xz-control"));
+	        js.executeScript("arguments[0].scrollIntoView(true)", stateDropdown);
+	        js.executeScript("arguments[0].click()", stateDropdown);
+	        
+	        WebElement stateInput = driver.findElement(By.id("react-select-3-input"));
+	        stateInput.sendKeys("NCR");
+	        stateInput.sendKeys(Keys.ENTER);
 	}
 
 }

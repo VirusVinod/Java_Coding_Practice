@@ -3,13 +3,15 @@ package codingpactice1;
 public class SwapTwoString5 {
 	public static void main(String[] args) {
 
-		String str = "DATA";
-		String res = "";
+		String a = "DATA";
+		String b = "SCI";
 
-		for (int i = 0; i < str.length(); i++) {
-			res = str.charAt(i) + res;
-		}
-		System.out.println(res);
+		a = a + b;
+		b = a.substring(0, a.length() - b.length());
+		a = a.substring(b.length());
+
+		System.out.println("a : " + a);
+		System.out.println("b : " + b);
 	}
 
 }

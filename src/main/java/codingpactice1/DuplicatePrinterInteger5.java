@@ -1,24 +1,25 @@
 package codingpactice1;
 
-public class DuplicatePrinterInteger4 {
+public class DuplicatePrinterInteger5 {
 
 	public static void main(String[] args) {
-		int[] arr = { 2, 3, 2, 3, 4, 5, 6, 1, 3 };
+
+		int[] arr = { 2, 3, 2, 3, 1 };
 		int n = arr.length;
 
 		for (int i = 0; i < n; i++) {
-			boolean isDuplicate = false;
+			boolean isdup = false;
 			for (int j = 0; j < i; j++) {
-				if (arr[i] == arr[j]) {
-					isDuplicate = true;
+				if (arr[j] == arr[i]) {
+					isdup = true;
 					break;
 				}
 			}
-			if (isDuplicate) {
+			if (isdup) {
 				continue;
 			}
 			for (int k = i + 1; k < n; k++) {
-				if (arr[k] == arr[i]) {
+				if (arr[i] == arr[k]) {
 					System.out.print(arr[i] + ",");
 				}
 			}

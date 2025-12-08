@@ -1,6 +1,7 @@
 package codingpactice1;
 
-public class FibonacciSeries16 {
+public class FibonacciSeries17 {
+
 	public static void main(String[] args) {
 
 		int n = 10, first = 0, second = 1;
@@ -12,6 +13,7 @@ public class FibonacciSeries16 {
 			first = second;
 			second = inext;
 		}
+
 	}
 
 }

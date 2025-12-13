@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -46,6 +47,22 @@ public class Amazon5 {
 
 			}
 
+		}
+//		Step : 04
+
+		String parentId = driver.getWindowHandle();
+
+		Set<String> allWindow = driver.getWindowHandles();
+		for (String s : allWindow) {
+			if (!parentId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement addtoCrt = driver.findElement(By.xpath("//input[@name='submit.add-to-cart']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addtoCrt);
+				js.executeScript("arguments[0].click()", addtoCrt);
+				break;
+			}
 		}
 
 	}

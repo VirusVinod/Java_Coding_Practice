@@ -2,7 +2,9 @@ package SeleniumPractice;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Amazon6 {
@@ -14,6 +16,13 @@ public class Amazon6 {
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+//		Step 02
+
+		WebElement seacrchbox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		seacrchbox.sendKeys("Iphone");
+		WebElement searchbtnclick = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
+		searchbtnclick.click();
 	}
 
 }

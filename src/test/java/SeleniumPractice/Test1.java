@@ -23,22 +23,28 @@ public class Test1 {
 		tt.searchItem();
 	}
 
-	public void listOfElementsClickByText(List<WebElement> ele, String expectedText) {
+	public void clickOnElement(WebElement ele) {
+		try {
+			waitForElement(ele, 15).click();
+		} catch (Exception e) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true)", ele);
+			js.executeScript("arguments[0].click()", ele);
+		}
+	}
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	public WebElement waitForElement(WebElement ele, long timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+		return wait.until(ExpectedConditions.visibilityOf(ele));
 
+	}
+
+	public void listOfElementsClickByText(List<WebElement> ele, String expectedText) {
 		for (WebElement element : ele) {
 			String actualText = element.getText().trim();
 
 			if (actualText.contains(expectedText)) {
-				try {
-					wait.until(ExpectedConditions.elementToBeClickable(element));
-					element.click();
-				} catch (Exception e) {
-					js.executeScript("arguments[0].scrollIntoView(true);", element);
-					js.executeScript("arguments[0].click();", element);
-				}
+				clickOnElement(element);
 				return;
 			}
 		}

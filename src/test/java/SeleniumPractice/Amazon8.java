@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,8 +27,23 @@ public class Amazon8 {
 		WebElement clicksearchbox = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		clicksearchbox.click();
 
-	
+//		Step 03
+
+		String expectedItem = "iPhone 15 (128 GB) - Black";
+		List<WebElement> allProductName = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+
+		for (WebElement getAllProduct : allProductName) {
+			String actualProduct = getAllProduct.getText().trim();
+
+			if (actualProduct.equals(expectedItem)) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", getAllProduct);
+				js.executeScript("arguments[0].click()", getAllProduct);
+				break;
+			}
+		}
 
 	}
+	
 
 }

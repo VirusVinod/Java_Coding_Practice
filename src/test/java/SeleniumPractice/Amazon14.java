@@ -1,0 +1,31 @@
+package SeleniumPractice;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Amazon14 {
+	
+	public static void main(String[] args) {
+		
+//		Step 01
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
+//		Step 02
+		
+		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		searchItem.sendKeys("iphone");
+		
+		WebElement searchbtnClick = driver.findElement(By.xpath("nav-search-submit-button"));
+		searchbtnClick.click();
+		
+	}
+
+}

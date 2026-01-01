@@ -1,11 +1,16 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -59,6 +64,15 @@ public class Amazon16 {
 				js.executeScript("arguments[0].click()", addtoclick);
 				break;
 			}
+		}
+
+//		Step 05
+		File screnShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destFile = new File("image.jpg");
+		try {
+			FileUtils.copyFile(screnShot, destFile);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 	}

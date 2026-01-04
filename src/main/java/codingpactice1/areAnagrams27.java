@@ -2,18 +2,19 @@ package codingpactice1;
 
 import java.util.Arrays;
 
-public class areAnagrams26 {
+public class areAnagrams27 {
 
 	public static void main(String[] args) {
 
-		String str1 = "core";
-		String str2 = "oecr";
+		String str1 = "data";
+		String str2 = "aatd";
 
-		boolean isAnagram = true;
+		boolean isAnagarm = true;
 
 		if (str1.length() != str2.length()) {
-			isAnagram = false;
+			isAnagarm = false;
 		} else {
+
 			char[] ch1 = str1.toCharArray();
 			char[] ch2 = str2.toCharArray();
 
@@ -21,11 +22,10 @@ public class areAnagrams26 {
 			Arrays.sort(ch2);
 
 			if (!Arrays.equals(ch1, ch2)) {
-				isAnagram = false;
-
+				isAnagarm = false;
 			}
 		}
-		if (isAnagram) {
+		if (isAnagarm) {
 			System.out.println("True");
 		} else {
 			System.out.println("False");

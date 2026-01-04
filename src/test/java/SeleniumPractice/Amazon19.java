@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class Amazon19 {
 
 	public static void main(String[] args) {
@@ -17,14 +19,25 @@ public class Amazon19 {
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
+
 //		Step 02
-		
+
 		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		searchItem.sendKeys("iphone");
-		
+
 		WebElement searchItemClick = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		searchItemClick.click();
+
+//		Step 03
+
+		String expectedvalidated = "Results";
+		WebElement getactual = driver
+				.findElement(By.xpath("//h2[@class ='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
+		String actualRes = getactual.getText().trim();
+		Assert.assertEquals(expectedvalidated, actualRes);
+		System.out.println("Expected Res : " + expectedvalidated);
+		System.out.println("Actua Res : " + actualRes);
+
 	}
 
 }

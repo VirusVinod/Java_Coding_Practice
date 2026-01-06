@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +39,25 @@ public class Amazon21 {
 		Assert.assertEquals(nextPaegeValidated, getVal);
 		System.out.println("Expected res : " + nextPaegeValidated);
 		System.out.println("Actual Res : " + getVal);
+
+//		Step 04
+
+		String expectedproduct = "iPhone 15 (128 GB) - Blue";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+
+		for (WebElement productName : list) {
+
+			String actualProduct = productName.getText().trim();
+
+			if (actualProduct.equals(expectedproduct)) {
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", productName);
+				js.executeScript("arguments[0].click()", productName);
+				break;
+
+			}
+		}
 
 	}
 

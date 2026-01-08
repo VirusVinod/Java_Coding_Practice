@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class Amazon23 {
 
 	public static void main(String[] args) {
@@ -25,8 +27,17 @@ public class Amazon23 {
 
 		WebElement searchBtnClick = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		searchBtnClick.click();
-		
+
 //		Step 03
+
+		String expectedVlaidated = "Results";
+		WebElement getvalidate = driver
+				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
+		String actualValidated = getvalidate.getText().trim();
+		Assert.assertEquals(expectedVlaidated, actualValidated);
+		System.out.println("Expected Value : " + expectedVlaidated);
+		System.out.println("Actual Value : " + actualValidated);
+
 	}
 
 }

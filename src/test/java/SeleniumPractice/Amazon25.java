@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,14 +15,13 @@ public class Amazon25 {
 
 	public static void main(String[] args) {
 
-
 //		Step 01
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
+
 //		Step 02
 
 		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
@@ -28,7 +29,7 @@ public class Amazon25 {
 
 		WebElement searchBrnClick = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		searchBrnClick.click();
-		
+
 //		Step 03
 
 		String expectedvalidated = "Results";
@@ -39,6 +40,21 @@ public class Amazon25 {
 		System.out.println("Expected Value : " + expectedvalidated);
 		System.out.println("Actual Value : " + actualValidated);
 
+//		Step 04
+
+		String expectedProduct = "iPhone 15 (128 GB) - Blue";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+		for (WebElement productName : list) {
+
+			String actualProduct = productName.getText().trim();
+
+			if (actualProduct.equals(expectedProduct)) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", productName);
+				js.executeScript("arguments[0].click()", productName);
+				break;
+			}
+		}
 
 	}
 

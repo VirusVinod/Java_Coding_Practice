@@ -33,7 +33,7 @@ public class Amazon28 {
 		String assertExpected = "Results";
 		WebElement getRes = driver.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualAssert = getRes.getText().trim();
-		Assert.assertEquals(assertExpected, actualAssert);F
+		Assert.assertEquals(assertExpected, actualAssert);
 		
 		
 

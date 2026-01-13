@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,10 +27,10 @@ public class Amazon28 {
 //		Step 02
 
 		WebElement search = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		search.sendKeys("iphone");
+		search.sendKeys("iphone", Keys.ENTER);
 
-		WebElement btnSearchCli = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
-		btnSearchCli.click();
+//		WebElement btnSearchCli = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
+//		btnSearchCli.click();
 
 //		Step 03
 

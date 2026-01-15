@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,7 +39,7 @@ public class Amazon30 {
 
 //		Step 04
 
-		String expectedProduct = "iPhone 16 Pro Max 256 GB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Black Titanium";
+		String expectedProduct = "iPhone 17 Pro 256 GB: 15.93 cm (6.3″) Display with Promotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Cosmic Orange";
 		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
 
 		for (WebElement product : list) {
@@ -49,6 +50,24 @@ public class Amazon30 {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true)", product);
 				js.executeScript("arguments[0].click()", product);
+				break;
+
+			}
+		}
+
+//		Step 05
+
+		String pranetId = driver.getWindowHandle();
+		Set<String> allWin = driver.getWindowHandles();
+
+		for (String s : allWin) {
+			if (!pranetId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
+				js.executeScript("arguments[0].click()", addToCart);
 				break;
 
 			}

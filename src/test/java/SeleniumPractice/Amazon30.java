@@ -21,7 +21,7 @@ public class Amazon30 {
 
 //		Step 02
 
-		WebElement searcItem = driver.findElement(By.xpath(""));
+		WebElement searcItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		searcItem.sendKeys("iphone", Keys.ENTER);
 
 	}

@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,7 +38,7 @@ public class Amazon36 {
 
 //		Step 04
 
-		String expectedProduct = "iPhone 15 (128 GB) - Pink";
+		String expectedProduct = "iPhone 16 Pro Max 1 TB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Black Titanium";
 		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
 
 		for (WebElement product : list) {
@@ -47,6 +48,23 @@ public class Amazon36 {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true)", product);
 				js.executeScript("arguments[0].click()", product);
+				break;
+			}
+		}
+
+//		Step 05
+
+		String praentId = driver.getWindowHandle();
+		Set<String> allwin = driver.getWindowHandles();
+
+		for (String s : allwin) {
+			if (!praentId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
+				js.executeScript("arguments[0].click()", addToCart);
 				break;
 			}
 		}

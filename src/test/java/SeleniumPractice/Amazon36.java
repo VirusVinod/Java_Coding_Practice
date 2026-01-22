@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class Amazon36 {
 	public static void main(String[] args) {
 
@@ -22,6 +24,15 @@ public class Amazon36 {
 
 		WebElement SearchItemAndEnter = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		SearchItemAndEnter.sendKeys("iphone", Keys.ENTER);
+
+//		Step 03
+
+		String expectedPage = "Results";
+		WebElement resGet = driver
+				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
+		String actualPage = resGet.getText().trim();
+		Assert.assertEquals(expectedPage, actualPage);
+
 	}
 
 }

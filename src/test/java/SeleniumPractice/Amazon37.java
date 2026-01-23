@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,6 +35,19 @@ public class Amazon37 {
 		String actualPage = restget.getText().trim();
 		Assert.assertEquals(expectedpage, actualPage);
 
+//		Step 04
+
+		String expectedProduct = "iPhone 16 Pro Max 1 TB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Black Titanium";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+		for (WebElement product : list) {
+			String actualProduct = product.getText();
+			if (actualProduct.equals(expectedProduct)) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", product);
+				js.executeAsyncScript("arguments[0].click()", product);
+				break;
+			}
+		}
 	}
 
 }

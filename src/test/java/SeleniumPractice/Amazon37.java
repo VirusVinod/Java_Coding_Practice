@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class Amazon37 {
 	public static void main(String[] args) {
 
@@ -22,6 +24,14 @@ public class Amazon37 {
 		searchItem.sendKeys("iphone");
 		WebElement clickBtnSearch = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 		clickBtnSearch.click();
+
+//		Step 03
+
+		String expectedpage = "Results";
+		WebElement restget = driver
+				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
+		String actualPage = restget.getText().trim();
+		Assert.assertEquals(expectedpage, actualPage);
 
 	}
 

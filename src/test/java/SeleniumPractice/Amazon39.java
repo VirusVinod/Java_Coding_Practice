@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,7 +39,7 @@ public class Amazon39 {
 		String actualResult = result.getText().trim();
 		Assert.assertEquals(expectedResult, actualResult);
 
-//		Step 04s
+//		Step 04
 
 		String expectedProduct = "iPhone Air 256 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Space Black";
 		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
@@ -49,6 +50,23 @@ public class Amazon39 {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true)", product);
 				js.executeScript("arguments[0].click()", product);
+				break;
+			}
+		}
+
+//		Step 05
+
+		String parentId = driver.getWindowHandle();
+		Set<String> allWin = driver.getWindowHandles();
+
+		for (String s : allWin) {
+			if (!parentId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
+				js.executeScript("arguments[0].click()", addToCart);
 				break;
 			}
 		}

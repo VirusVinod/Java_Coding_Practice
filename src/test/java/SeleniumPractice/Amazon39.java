@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,6 +37,22 @@ public class Amazon39 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualResult = result.getText().trim();
 		Assert.assertEquals(expectedResult, actualResult);
+
+//		Step 04s
+
+		String expectedProduct = "iPhone Air 256 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Space Black";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+		for (WebElement product : list) {
+
+			String actualProduct = product.getText().trim();
+			if (actualProduct.equals(expectedProduct)) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", product);
+				js.executeScript("arguments[0].click()", product);
+				break;
+			}
+		}
+
 	}
 
 }

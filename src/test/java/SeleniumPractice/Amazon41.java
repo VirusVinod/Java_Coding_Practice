@@ -17,6 +17,13 @@ public class Amazon41 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+//		Step 02
+
+		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		searchItem.sendKeys("iphone");
+
+		WebElement BtnCickSearchBox = driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
+		BtnCickSearchBox.click();
 
 
 	}

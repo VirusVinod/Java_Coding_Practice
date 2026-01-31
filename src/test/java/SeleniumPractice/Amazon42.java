@@ -2,7 +2,10 @@ package SeleniumPractice;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Amazon42 {
@@ -16,6 +19,10 @@ public class Amazon42 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
+//		Step 02
+		
+		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		searchItem.sendKeys("iphone",Keys.ENTER);
 		
 	}
 

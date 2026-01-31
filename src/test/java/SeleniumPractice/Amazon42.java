@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,13 +28,30 @@ public class Amazon42 {
 		WebElement searchItem = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		searchItem.sendKeys("iphone", Keys.ENTER);
 
-//		Step 02
+//		Step 03
 
 		String expectedPage = "Results";
 		WebElement page = driver
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualPage = page.getText().trim();
 		Assert.assertEquals(expectedPage, actualPage);
+
+//		Step 04
+
+		String expectedProduct = "iPhone 14 Plus (256 GB) - Midnight";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+
+		for (WebElement product : list) {
+
+			String actualProduct = product.getText().trim();
+			if (actualProduct.equals(expectedProduct)) {
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", product);
+				js.executeScript("arguments[0].click()", product);
+				break;
+			}
+		}
 
 	}
 

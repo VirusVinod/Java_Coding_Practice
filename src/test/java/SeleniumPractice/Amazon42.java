@@ -1,12 +1,17 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,16 +58,16 @@ public class Amazon42 {
 				break;
 			}
 		}
-		
+
 //		Step 05
-		
+
 		String parentId = driver.getWindowHandle();
 		Set<String> allWin = driver.getWindowHandles();
-		
-		for(String w :allWin) {
-			if(!parentId.equals(w)) {
+
+		for (String w : allWin) {
+			if (!parentId.equals(w)) {
 				driver.switchTo().window(w);
-				
+
 				WebElement addtoCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true)", addtoCart);
@@ -70,8 +75,16 @@ public class Amazon42 {
 				break;
 			}
 		}
-		
+
 //		Step 06
+
+		File screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destination = new File("fil.jpg");
+		try {
+			FileUtils.copyFile(screenShot, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,6 +37,25 @@ public class Amazon47 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualPage = getPage.getText().trim();
 		Assert.assertEquals(expectedPAge, actualPage);
+
+//		Step 04
+
+		String expectedProduct = "iPhone 15 Pro Max (512 GB) - White Titanium";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+
+		for (WebElement product : list) {
+
+			String actualProduct = product.getText().trim();
+
+			if (actualProduct.equals(expectedProduct)) {
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", product);
+				js.executeScript("arguments[0].click()", product);
+				break;
+
+			}
+		}
 
 	}
 

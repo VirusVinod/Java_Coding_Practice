@@ -1,11 +1,16 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -72,6 +77,16 @@ public class Amazon48 {
 				break;
 
 			}
+		}
+
+//		Step 06
+
+		File screnShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destination = new File("imagesggghk.png");
+		try {
+			FileUtils.copyFile(screnShot, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 	}

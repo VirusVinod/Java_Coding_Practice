@@ -2,6 +2,7 @@ package SeleniumPractice;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,8 +35,7 @@ public class Amazon50 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String atualPAge = page.getText().trim();
 		Assert.assertEquals(expectedPage, atualPAge);
-		
-		
+
 //		Step 04
 
 		String expectedProduct = "iPhone 17 Pro Max 2 TB: 17.42 cm (6.9″) Display with Promotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Silver";
@@ -52,6 +52,23 @@ public class Amazon50 {
 				break;
 			}
 
+		}
+
+//		Step 05
+
+		String praentId = driver.getWindowHandle();
+		Set<String> allWin = driver.getWindowHandles();
+
+		for (String s : allWin) {
+			if (!praentId.equals(s)) {
+				driver.switchTo().window(s);
+
+				WebElement addToCart = driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", addToCart);
+				js.executeScript("arguments[0].click()", addToCart);
+				break;
+			}
 		}
 	}
 

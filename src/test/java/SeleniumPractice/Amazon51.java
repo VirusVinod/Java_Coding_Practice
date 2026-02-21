@@ -35,6 +35,8 @@ public class Amazon51 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualPage = page.getText().trim();
 		Assert.assertEquals(expectedPage, actualPage);
+		
+//		Step 04
 	}
 
 }

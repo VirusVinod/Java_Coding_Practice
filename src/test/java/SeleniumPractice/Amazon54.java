@@ -1,11 +1,16 @@
 package SeleniumPractice;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +19,7 @@ import junit.framework.Assert;
 
 public class Amazon54 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 //		Step 01
 
@@ -38,7 +43,7 @@ public class Amazon54 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String ValidActualPage = result.getText().trim();
 		Assert.assertEquals(ValidatedExpedtedPage, ValidActualPage);
-		
+
 //		Step 04
 
 		String expectedProduct = "iPhone 16 Pro Max 1 TB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; White Titanium";
@@ -74,7 +79,12 @@ public class Amazon54 {
 
 			}
 		}
-		
+
+//		Step 06
+
+		File screnShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destination = new File("abcfg.jpg");
+		FileUtils.copyFile(screnShot, destination);
 	}
 
 }

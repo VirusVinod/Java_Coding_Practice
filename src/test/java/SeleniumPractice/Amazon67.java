@@ -1,8 +1,10 @@
 package SeleniumPractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,6 +33,25 @@ public class Amazon67 {
 				.findElement(By.xpath("//h2[@class='a-size-medium-plus a-spacing-none a-color-base a-text-bold']"));
 		String actualPage = page.getText().trim();
 		Assert.assertEquals(expectedPage, actualPage);
+		
+
+//		Step 04
+
+		String expectedProduct = "iPhone 17 Pro 1 TB: 15.93 cm (6.3″) Display with Promotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Deep Blue";
+		List<WebElement> list = driver.findElements(By.xpath("//div[@data-cy='title-recipe']//a//h2"));
+		for (WebElement product : list) {
+
+			String actualProduct = product.getText().trim();
+			if (actualProduct.equals(expectedProduct)) {
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+
+				js.executeScript("arguments[0].scrollIntoView(true);", product);
+				js.executeScript("arguments[0].click();", product);
+				break;
+
+			}
+		}
 
 	}
 

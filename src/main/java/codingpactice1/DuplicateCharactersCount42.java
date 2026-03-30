@@ -13,7 +13,7 @@ public class DuplicateCharactersCount42 {
 		}
 
 		for (int j = 0; j < 256; j++) {
-			if (count[j] >= 1) {
+			if (count[j] > 1) {
 				System.out.println((char) j + " - " + count[j]);
 			}
 

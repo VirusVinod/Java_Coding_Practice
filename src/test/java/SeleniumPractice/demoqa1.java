@@ -75,7 +75,7 @@ public class demoqa1 {
 			
 			WebElement lgnBtn = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 			lgnBtn.click();
-		}
+		
 	}
 
 }

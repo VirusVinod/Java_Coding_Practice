@@ -30,6 +30,7 @@ public class demoqa2 {
 		WebElement mobileNo = driver.findElement(By.xpath("//input[@id='userNumber']"));
 		mobileNo.sendKeys("9801928281");
 		
+		
 	}
 
 }

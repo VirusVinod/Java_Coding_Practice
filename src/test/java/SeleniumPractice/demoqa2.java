@@ -19,20 +19,20 @@ public class demoqa2 {
 		driver.get("https://demoqa.com/automation-practice-form");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
+
 		WebElement firstName = driver.findElement(By.id("firstName"));
 		firstName.sendKeys("Test");
-		
+
 		WebElement lastname = driver.findElement(By.id("lastName"));
 		lastname.sendKeys("Test");
-		
+
 		WebElement maleRadio = driver.findElement(By.id("gender-radio-1"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", maleRadio);
-		
+
 		WebElement mobileNo = driver.findElement(By.xpath("//input[@id='userNumber']"));
 		mobileNo.sendKeys("9801928281");
-		
+
 //		DatePicker
 		WebElement maleRadatePickerInputdio = driver.findElement(By.id("dateOfBirthInput"));
 		js.executeScript("arguments[0].click()", maleRadatePickerInputdio);
@@ -40,11 +40,11 @@ public class demoqa2 {
 		WebElement monthDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__month-select']"));
 		Select s = new Select(monthDropDown);
 		s.selectByVisibleText("October");
-		
+
 		WebElement yearDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__year-select']"));
 		Select y = new Select(yearDropDown);
 		y.selectByVisibleText("2023");
-		
+
 		String ExpectdatedDate = "8";
 		List<WebElement> allDates = driver.findElements(By.xpath(" //div[@role='option']"));
 
@@ -57,7 +57,7 @@ public class demoqa2 {
 				break;
 			}
 		}
-		
+
 //		Select state and city
 		WebElement stateDropdown = driver.findElement(By.cssSelector("div#state div.css-yk16xz-control"));
 		js.executeScript("arguments[0].click()", stateDropdown);
@@ -65,8 +65,18 @@ public class demoqa2 {
 		WebElement stateInput = driver.findElement(By.id("react-select-3-input"));
 		stateInput.sendKeys("NCR");
 		stateInput.sendKeys(Keys.ENTER);
-		
-		
+
+//		   Select City
+		WebElement cityDropdown = driver.findElement(By.cssSelector("#city div.css-yk16xz-control"));
+		js.executeScript("arguments[0].click()", cityDropdown);
+
+		WebElement cityInput = driver.findElement(By.id("react-select-4-input"));
+		cityInput.sendKeys("Delhi");
+		cityInput.sendKeys(Keys.ENTER);
+
+		WebElement lgnBtn = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
+		lgnBtn.click();
+
 	}
 
 }

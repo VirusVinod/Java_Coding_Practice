@@ -66,6 +66,9 @@ public class demoqa3 {
 		stateInput.sendKeys("NCR");
 		stateInput.sendKeys(Keys.ENTER);
 		
+//		   Select City
+			WebElement cityDropdown = driver.findElement(By.cssSelector("#city div.css-yk16xz-control"));
+			js.executeScript("arguments[0].click()", cityDropdown);
 	}
 
 }

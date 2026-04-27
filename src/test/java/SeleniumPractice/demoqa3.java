@@ -69,6 +69,10 @@ public class demoqa3 {
 //		   Select City
 			WebElement cityDropdown = driver.findElement(By.cssSelector("#city div.css-yk16xz-control"));
 			js.executeScript("arguments[0].click()", cityDropdown);
+			
+			WebElement cityInput = driver.findElement(By.id("react-select-4-input"));
+			cityInput.sendKeys("Delhi");
+			cityInput.sendKeys(Keys.ENTER);
 	}
 
 }

@@ -37,6 +37,10 @@ public class demoqa4 {
 		WebElement monthDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__month-select']"));
 		Select s = new Select(monthDropDown);
 		s.selectByVisibleText("October");
+		
+		WebElement yearDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__year-select']"));
+		Select y = new Select(yearDropDown);
+		y.selectByVisibleText("2023");
 
 	}
 

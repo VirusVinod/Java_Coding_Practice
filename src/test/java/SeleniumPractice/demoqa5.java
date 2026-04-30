@@ -28,6 +28,10 @@ public class demoqa5 {
 		
 		WebElement mobileNo = driver.findElement(By.xpath("//input[@id='userNumber']"));
 		mobileNo.sendKeys("9801928281");
+		
+//		DatePicker
+		WebElement maleRadatePickerInputdio = driver.findElement(By.id("dateOfBirthInput"));
+		js.executeScript("arguments[0].click()", maleRadatePickerInputdio);
 
 	}
 

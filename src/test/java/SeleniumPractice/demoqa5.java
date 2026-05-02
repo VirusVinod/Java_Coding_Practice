@@ -23,26 +23,26 @@ public class demoqa5 {
 
 		WebElement lastname = driver.findElement(By.id("lastName"));
 		lastname.sendKeys("Test");
-		
+
 		WebElement maleRadio = driver.findElement(By.id("gender-radio-1"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", maleRadio);
-		
+
 		WebElement mobileNo = driver.findElement(By.xpath("//input[@id='userNumber']"));
 		mobileNo.sendKeys("9801928281");
-		
+
 //		DatePicker
 		WebElement maleRadatePickerInputdio = driver.findElement(By.id("dateOfBirthInput"));
 		js.executeScript("arguments[0].click()", maleRadatePickerInputdio);
-		
+
 		WebElement monthDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__month-select']"));
 		Select s = new Select(monthDropDown);
 		s.selectByVisibleText("October");
-		
+
 		WebElement yearDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__year-select']"));
 		Select y = new Select(yearDropDown);
 		y.selectByVisibleText("2023");
-		
+
 		String ExpectdatedDate = "8";
 		List<WebElement> allDates = driver.findElements(By.xpath(" //div[@role='option']"));
 
@@ -55,6 +55,10 @@ public class demoqa5 {
 				break;
 			}
 		}
+
+//		Select state and city
+		WebElement stateDropdown = driver.findElement(By.cssSelector("div#state div.css-yk16xz-control"));
+		js.executeScript("arguments[0].click()", stateDropdown);
 
 	}
 

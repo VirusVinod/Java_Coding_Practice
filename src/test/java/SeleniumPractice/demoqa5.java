@@ -72,6 +72,9 @@ public class demoqa5 {
 		WebElement cityInput = driver.findElement(By.id("react-select-4-input"));
 		cityInput.sendKeys("Delhi");
 		cityInput.sendKeys(Keys.ENTER);
+		
+		WebElement lgnBtn = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
+		lgnBtn.click();
 
 	}
 

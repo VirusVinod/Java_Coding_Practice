@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class demoqa6 {
 	public static void main(String[] args) {
@@ -31,6 +32,10 @@ public class demoqa6 {
 //		DatePicker
 		WebElement maleRadatePickerInputdio = driver.findElement(By.id("dateOfBirthInput"));
 		js.executeScript("arguments[0].click()", maleRadatePickerInputdio);
+		
+		WebElement monthDropDown = driver.findElement(By.xpath(" //select[@class='react-datepicker__month-select']"));
+		Select s = new Select(monthDropDown);
+		s.selectByVisibleText("October");
 	}
 
 }

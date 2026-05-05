@@ -54,6 +54,10 @@ public class demoqa6 {
 				break;
 			}
 		}
+		
+//		Select state and city
+		WebElement stateDropdown = driver.findElement(By.cssSelector("div#state div.css-yk16xz-control"));
+		js.executeScript("arguments[0].click()", stateDropdown);
 	}
 
 }

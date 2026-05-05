@@ -63,6 +63,10 @@ public class demoqa6 {
 		WebElement stateInput = driver.findElement(By.id("react-select-3-input"));
 		stateInput.sendKeys("NCR");
 		stateInput.sendKeys(Keys.ENTER);
+		
+//		   Select City
+		WebElement cityDropdown = driver.findElement(By.cssSelector("#city div.css-yk16xz-control"));
+		js.executeScript("arguments[0].click()", cityDropdown);
 	}
 
 }

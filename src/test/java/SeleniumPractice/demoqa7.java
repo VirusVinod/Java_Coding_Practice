@@ -25,6 +25,9 @@ public class demoqa7 {
 		WebElement maleRadio = driver.findElement(By.id("gender-radio-1"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", maleRadio);
+		
+		WebElement mobileNo = driver.findElement(By.xpath("//input[@id='userNumber']"));
+		mobileNo.sendKeys("9801928281");
 
 	}
 

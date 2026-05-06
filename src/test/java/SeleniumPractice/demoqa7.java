@@ -17,6 +17,9 @@ public class demoqa7 {
 		
 		WebElement firstName = driver.findElement(By.id("firstName"));
 		firstName.sendKeys("Test");
+		
+		WebElement lastname = driver.findElement(By.id("lastName"));
+		lastname.sendKeys("Test");
 
 	}
 

@@ -17,6 +17,10 @@ public class SwagLabs2 {
 
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("secret_sauce");
+		
+		WebElement loginbtn = driver.findElement(By.id("login-button"));
+		loginbtn.click();
+		
 
 	}
 

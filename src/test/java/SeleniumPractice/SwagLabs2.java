@@ -43,6 +43,8 @@ public class SwagLabs2 {
         WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
         clickaCrad.click();
         
+        WebElement checkout = driver.findElement(By.id("checkout"));
+        checkout.click();
 
 	}
 

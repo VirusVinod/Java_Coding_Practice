@@ -39,6 +39,10 @@ public class SwagLabs2 {
             }
 
         }
+        
+        WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
+        clickaCrad.click();
+        
 
 	}
 

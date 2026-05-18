@@ -19,25 +19,27 @@ public class SwagLabs3 {
 		email.sendKeys("standard_user");
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("secret_sauce");
-		
+
 		WebElement loginbtn = driver.findElement(By.id("login-button"));
 		loginbtn.click();
-		
-		String targetProduct  = "Sauce Labs Bolt T-Shirt";
-		List<WebElement> productList  = driver.findElements(By.xpath("//div[@class='inventory_item']"));
-        for (WebElement product : productList) {
-            String productName = product.findElement(By.xpath(".//div[@class='inventory_item_name ']")).getText();
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView(true);", product);
-            if (productName.equals(targetProduct)) {
-                WebElement addToCartButton = product.findElement(By.xpath(".//button[contains(@class,'btn_inventory')]"));
-                addToCartButton.click();
-                System.out.println("Added to cart: " + productName);
-                break;
-            }
 
-        }
-        
+		String targetProduct = "Sauce Labs Bolt T-Shirt";
+		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+		for (WebElement product : productList) {
+			String productName = product.findElement(By.xpath(".//div[@class='inventory_item_name ']")).getText();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", product);
+			if (productName.equals(targetProduct)) {
+				WebElement addToCartButton = product
+						.findElement(By.xpath(".//button[contains(@class,'btn_inventory')]"));
+				addToCartButton.click();
+				System.out.println("Added to cart: " + productName);
+				break;
+			}
+
+		}
+		WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
+		clickaCrad.click();
 
 	}
 

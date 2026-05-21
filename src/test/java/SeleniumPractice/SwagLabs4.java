@@ -19,7 +19,7 @@ public class SwagLabs4 {
 		password.sendKeys("secret_sauce");
 		WebElement loginbtn = driver.findElement(By.id("login-button"));
 		loginbtn.click();
-		
+
 		String targetProduct = "Sauce Labs Bolt T-Shirt";
 		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='inventory_item']"));
 		for (WebElement product : productList) {
@@ -35,7 +35,10 @@ public class SwagLabs4 {
 			}
 
 		}
-		
+
+		WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
+		clickaCrad.click();
+
 	}
 
 }

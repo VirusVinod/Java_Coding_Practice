@@ -1,6 +1,9 @@
 package SeleniumPractice;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +19,22 @@ public class SwagLabs4 {
 		password.sendKeys("secret_sauce");
 		WebElement loginbtn = driver.findElement(By.id("login-button"));
 		loginbtn.click();
+		
+		String targetProduct = "Sauce Labs Bolt T-Shirt";
+		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+		for (WebElement product : productList) {
+			String productName = product.findElement(By.xpath(".//div[@class='inventory_item_name ']")).getText();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", product);
+			if (productName.equals(targetProduct)) {
+				WebElement addToCartButton = product
+						.findElement(By.xpath(".//button[contains(@class,'btn_inventory')]"));
+				addToCartButton.click();
+				System.out.println("Added to cart: " + productName);
+				break;
+			}
+
+		}
 		
 	}
 

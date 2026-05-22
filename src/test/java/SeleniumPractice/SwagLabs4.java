@@ -53,6 +53,9 @@ public class SwagLabs4 {
 		
 		WebElement ccontinue = driver.findElement(By.id("continue"));
 		ccontinue.click();
+		
+		WebElement finish = driver.findElement(By.id("finish"));
+		finish.click();
 
 	}
 

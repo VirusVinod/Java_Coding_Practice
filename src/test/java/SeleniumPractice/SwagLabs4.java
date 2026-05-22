@@ -47,6 +47,9 @@ public class SwagLabs4 {
 		
 		WebElement lastName = driver.findElement(By.id("last-name"));
 		lastName.sendKeys("USA Test1");
+		
+		WebElement postalCode = driver.findElement(By.id("postal-code"));
+		postalCode.sendKeys("110095");
 
 	}
 

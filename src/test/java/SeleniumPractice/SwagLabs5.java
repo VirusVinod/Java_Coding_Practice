@@ -14,16 +14,16 @@ public class SwagLabs5 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
-		
+
 		WebElement email = driver.findElement(By.id("user-name"));
 		email.sendKeys("standard_user");
-		
+
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("secret_sauce");
-		
+
 		WebElement loginbtn = driver.findElement(By.id("login-button"));
 		loginbtn.click();
-		
+
 		String targetProduct = "Sauce Labs Bolt T-Shirt";
 		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='inventory_item']"));
 		for (WebElement product : productList) {
@@ -39,6 +39,9 @@ public class SwagLabs5 {
 			}
 
 		}
+
+		WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
+		clickaCrad.click();
 	}
 
 }

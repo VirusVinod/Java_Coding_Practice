@@ -48,6 +48,9 @@ public class SwagLabs5 {
 		
 		WebElement firstName = driver.findElement(By.id("first-name"));
 		firstName.sendKeys("Test Build11");
+		
+		WebElement lastName = driver.findElement(By.id("last-name"));
+		lastName.sendKeys("USA Test1");
 	}
 
 }

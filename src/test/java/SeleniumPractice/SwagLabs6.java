@@ -46,6 +46,9 @@ public class SwagLabs6 {
 		
 		WebElement checkout = driver.findElement(By.id("checkout"));
 		checkout.click();
+		
+		WebElement firstName = driver.findElement(By.id("first-name"));
+		firstName.sendKeys("Test Build11");
 
 	}
 

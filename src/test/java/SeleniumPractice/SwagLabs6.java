@@ -43,12 +43,15 @@ public class SwagLabs6 {
 
 		WebElement clickaCrad = driver.findElement(By.id("shopping_cart_container"));
 		clickaCrad.click();
-		
+
 		WebElement checkout = driver.findElement(By.id("checkout"));
 		checkout.click();
-		
+
 		WebElement firstName = driver.findElement(By.id("first-name"));
 		firstName.sendKeys("Test Build11");
+
+		WebElement lastName = driver.findElement(By.id("last-name"));
+		lastName.sendKeys("USA Test1");
 
 	}
 

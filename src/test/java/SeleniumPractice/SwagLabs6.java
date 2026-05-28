@@ -56,6 +56,8 @@ public class SwagLabs6 {
 		WebElement postalCode = driver.findElement(By.id("postal-code"));
 		postalCode.sendKeys("110095");
 		
+		WebElement ccontinue = driver.findElement(By.id("continue"));
+		ccontinue.click();
 
 	}
 

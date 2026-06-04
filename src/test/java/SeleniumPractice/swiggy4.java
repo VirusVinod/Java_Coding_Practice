@@ -1,5 +1,7 @@
 package SeleniumPractice;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +24,9 @@ public class swiggy4 {
 		WebElement loginButtonclick = driver.findElement(By.xpath("//div[@class='_1cmcE _3R9Dd']"));
 		loginButtonclick.click();
 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		WebElement otp = driver.findElement(By.id("otp"));
+		otp.sendKeys("000000");
 	}
 
 }

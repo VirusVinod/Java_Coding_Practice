@@ -14,6 +14,10 @@ public class swiggy7 {
 		
 		WebElement signinClick = driver.findElement(By.xpath("//div[@class='_3chg9']"));
 		signinClick.click();
+		
+		WebElement mobileNo = driver.findElement(By.id("mobile"));
+		mobileNo.sendKeys("8802867320");
+
 
 
 	}

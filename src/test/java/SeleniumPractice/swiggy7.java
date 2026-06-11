@@ -19,6 +19,9 @@ public class swiggy7 {
 		mobileNo.sendKeys("8802867320");
 
 
+		WebElement loginButtonclick = driver.findElement(By.xpath("//div[@class='_1cmcE _3R9Dd']"));
+		loginButtonclick.click();
+
 
 	}
 

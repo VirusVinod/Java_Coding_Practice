@@ -25,6 +25,11 @@ public class swiggy14 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		WebElement otp = driver.findElement(By.id("otp"));
 		otp.sendKeys("000000");
+
+		WebElement veryfyOtp = driver.findElement(By.xpath("//div[@class='_1cmcE _3R9Dd']"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		veryfyOtp.click();
+
 	}
 
 }

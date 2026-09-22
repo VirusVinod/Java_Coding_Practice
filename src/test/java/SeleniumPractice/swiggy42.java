@@ -10,10 +10,12 @@ public class swiggy42 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.swiggy.com/");
-		
+
 		WebElement signinClick = driver.findElement(By.xpath("//div[@class='_3chg9']"));
 		signinClick.click();
 
+		WebElement mobileNo = driver.findElement(By.id("mobile"));
+		mobileNo.sendKeys("8802867320");
 	}
 
 }

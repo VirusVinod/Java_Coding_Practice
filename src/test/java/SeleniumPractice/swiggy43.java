@@ -11,12 +11,15 @@ public class swiggy43 {
 		driver.manage().window().maximize();
 		driver.get("https://www.swiggy.com/");
 		driver.manage().window().maximize();
-		
+
 		WebElement signinClick = driver.findElement(By.xpath("//div[@class='_3chg9']"));
 		signinClick.click();
-		
+
 		WebElement mobileNo = driver.findElement(By.id("mobile"));
 		mobileNo.sendKeys("8802867320");
+
+		WebElement loginButtonclick = driver.findElement(By.xpath("//div[@class='_1cmcE _3R9Dd']"));
+		loginButtonclick.click();
 	}
 
 }
